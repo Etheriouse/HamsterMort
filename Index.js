@@ -11,7 +11,7 @@ client.login(token);
 
 client.once('ready', () => {
     console.log("Connected")
-    client.user.setActivity('ZZCCMXTP - LEZGONGUE', { type: 'LISTENING' }).then(presence => console.log(`Activity set to ${presence.activities[0].name}`)).catch(console.error);
+    client.user.setActivity(`try to live with ${prefix}`, { type: 'PLAYING' }).then(presence => console.log(`Activity set to ${presence.activities[0].name}`)).catch(console.error);
 });
 
 client.on("message", async message => {
@@ -88,43 +88,7 @@ client.on("message", async message => {
     if (message.content.startsWith(`${prefix}histoire`)) {
         Fun.forssagesdwCommande(message)
     }
-    if (message.content.startsWith(`${prefix}Eq`)) {
-        message.reply("Pas encore fait donc attend que sa soit fait")
-        return
-        /*message.channel.send("Donnez valeur de a:")
-        if (message.content.startsWith("a:")) {
-            var a = message.toString().slice(3)
-            var a_int = parseFloat(a)
-            if (a_int) {
-                console.log(a_int)
-                if (message.content.startsWith("b:")) {
-                    var b = message.toString().slice(3)
-                    var b_int = parseFloat(b)
-                    if(b_int) {
-                        console.log(b_int)
-                        if (message.content.startsWith("c:")) {
-                            var c = message.toString().slice(3)
-                            var c_int = parseFloat(c)
-                            if (c_int) {
-                                var delta = (b_int**2)-4*a_int*c_int
-                                console.log(a_int, b_int, c_int, delta)
-                            }
-                            else {
-                                message.reply("Donnez une valeur de c convenable")
-                            }
-                        }
-                    }
-                    else {
-                        message.reply("Donnez une valeur de b convenable")
-                    }
-                }
-            }
-            else {
-            message.reply("Donnez une valeur de a convenable")
-            }
-        }
-        */
-    }
+
 
     // Commande divertissante //
 
